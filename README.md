@@ -46,7 +46,9 @@ For this section, I will document the soldering procedure for the generic purple
 4. Strip off approximately 5mm of the outer wire insulator for each cable.
 5. Heat up your soldering iron, twist the cables together tightly, and apply solder to the wires. This makes it into one solid connector and makes it easier to solder to the accelerometer board later.
 6. Identify the first wire to solder. If you did step one, the top side that you marked is pin 6 on the Prusa Schematics and Connector documentation. (See the Diagram below). On the Digikey cable assembly, they use tape in the middle of the cables to group them to together. We have two options:
+
     a) Cut the tape and visually trace the cables.
+
     b) Leave the tape intract and use a multimeter to buzz out which cable is connected to each connector pin. This can be done by switching to continuity mode, touching one lead to a cable of your choice, and the other to small pad on the back of the connector.
 7. Solder the wire to the correct position. Repeat steps 5 and 6, finding the correct wires and soldering them to the board. A table is provided below for reference.
 8. Snip the extra wire that wasn't covered by the solder joint.
@@ -90,8 +92,10 @@ Recv: ok
 5. Now to test the X-Axis, you likely want to run the default workflow, which is over a large frequency range and sample size.
 6. The command above gave us a general range, but now we can confirm a second time by running it over a smaller range with more samples. For example, if step 5 returned a frequency of 79.0Hz, then I can test from 65 to 85Hz, at steps of 0.5Hz, with 100 Samples. This can be done with the command `M959 X F65.0 G85.0 H0.5`. See below for a list of parameters to the M959 command.
 7. Once you are satisfied with the results and think you have a consistent number, we will save the values. See the official documentation for the `M593` command [here][7]. Assuming I got the following results `Recv: ZV shaper selected Recv: Frequency: 79.00 damping ratio: 0.17444`
-    a. To do this temporarily (until you shut off the printer), running the following command `M593 X D0.17444 F79.00 T0`. Note the lack of the `W` parameter, the parameter to save it to the EEPROM.
-    b. To save it permamently, run the following command `M593 X D0.17444 F79.00 T0 W`.
+
+    a) To do this temporarily (until you shut off the printer), run the following command `M593 X D0.17444 F79.00 T0`. Note the lack of the `W` parameter, the parameter to save it to the EEPROM.
+
+    b) To save it permamently, run the following command `M593 X D0.17444 F79.00 T0 W`.
 
 ## M959 Command
 The `M959` command does all the heavy lifting in our testing. It's parameters are only listed in the source code, so I've copied them here for convenience.
