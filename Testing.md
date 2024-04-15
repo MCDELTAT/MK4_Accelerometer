@@ -1015,3 +1015,56 @@ Recv: ok
   Recv: Frequency: 44.50 damping ratio: 0.12661
   ```
 </details>
+
+
+# M959 Y with Mount, Finer Steps and Smaller Range in Klipper Mode
+* This test was similar to the one above it. However, I finally noticed it has a "Klipper Mode" that will export the values in the same format the Klipper CSV would be, as well as providing the calculations for all input shaper methods. This is preferred because the non-K method only displays values for ZV, not any of the others.
+
+<details>
+  <summary>Click to expand results.</summary>
+  
+  ### Results
+  ```  
+  Send: M959 Y F38.0 G50.0 H0.5 N100 K
+  Recv: Sample freq: 1272.26
+  Recv: freq,psd_x,psd_y,psd_z,psd_xyz,mzv
+  Recv: 38.00,0.01871,2.54590,0.37132,2.93593
+  Recv: 38.50,0.03021,2.79175,0.32952,3.15147
+  Recv: 39.00,0.04271,2.70912,0.27355,3.02538
+  Recv: 39.50,0.07820,3.11829,0.27827,3.47476
+  Recv: 40.00,0.18851,3.49455,0.43340,4.11647
+  Recv: 40.50,0.13699,3.58585,0.54372,4.26656
+  Recv: 41.00,0.08542,3.53858,0.78370,4.40770
+  Recv: 41.50,0.05299,3.97373,1.13032,5.15705
+  Recv: 42.00,0.04794,3.68824,1.14508,4.88126
+  Recv: 42.50,0.03264,4.69459,1.72077,6.44800
+  Recv: 43.00,0.02559,5.21155,2.12444,7.36158
+  Recv: 43.50,0.03658,6.44523,2.85173,9.33353
+  Recv: 44.00,0.05604,8.31416,3.73172,12.10192
+  Recv: 44.50,0.07054,8.37536,4.29166,12.73756
+  Recv: 45.00,0.10196,10.27810,5.86778,16.24785
+  Recv: 45.50,0.14392,13.60083,8.00881,21.75356
+  Recv: 46.00,0.21327,17.19635,10.26896,27.67857
+  Recv: 46.50,0.26049,20.29631,11.18510,31.74191
+  Recv: 47.00,0.27868,19.44877,10.88748,30.61494
+  Recv: 47.50,0.47478,29.74194,18.27992,48.49664
+  Recv: 48.00,0.71379,34.33215,19.53640,54.58235
+  Recv: 48.50,1.15349,24.02708,8.38045,33.56102
+  Recv: 49.00,1.56832,29.41927,11.45539,42.44298
+  Recv: 49.50,1.37361,21.08322,8.86253,31.31936
+  Recv: 50.00,1.92043,26.75994,12.90263,41.58300
+  Recv: echo:For shaper type: ZV(0) lowest vibration frequency: 48.20 with score: 0.000891 remaining vibrations: 0.00809814 and smoothing: 0.0722
+  Recv: echo:For shaper type: ZV(0) selected frequency: 48.40 with score: 0.000888 remaining vibrations: 0.00822963 and smoothing: 0.0717
+  Recv: echo:For shaper type: ZVD(1) lowest vibration frequency: 56.20 with score: 0.000975 remaining vibrations: 0.00000000 and smoothing: 0.0975
+  Recv: echo:For shaper type: ZVD(1) selected frequency: 56.20 with score: 0.000975 remaining vibrations: 0.00000000 and smoothing: 0.0975
+  Recv: echo:For shaper type: MZV(2) lowest vibration frequency: 49.20 with score: 0.000841 remaining vibrations: 0.00000000 and smoothing: 0.0841
+  Recv: echo:For shaper type: MZV(2) selected frequency: 49.20 with score: 0.000841 remaining vibrations: 0.00000000 and smoothing: 0.0841
+  Recv: echo:For shaper type: EI(3) lowest vibration frequency: 58.60 with score: 0.000938 remaining vibrations: 0.00000000 and smoothing: 0.0938
+  Recv: echo:For shaper type: EI(3) selected frequency: 58.60 with score: 0.000938 remaining vibrations: 0.00000000 and smoothing: 0.0938
+  Recv: echo:For shaper type: EI_2HUMP(4) lowest vibration frequency: 71.80 with score: 0.001047 remaining vibrations: 0.00000000 and smoothing: 0.1047
+  Recv: echo:For shaper type: EI_2HUMP(4) selected frequency: 71.80 with score: 0.001047 remaining vibrations: 0.00000000 and smoothing: 0.1047
+  Recv: echo:For shaper type: EI_3HUMP(5) lowest vibration frequency: 81.00 with score: 0.001249 remaining vibrations: 0.00000000 and smoothing: 0.1249
+  Recv: echo:For shaper type: EI_3HUMP(5) selected frequency: 81.00 with score: 0.001249 remaining vibrations: 0.00000000 and smoothing: 0.1249
+  Recv: echo:Activated Y axis default damping and vibr. reduction shaper type: ZV(0) frequency: 48.40
+  ```
+</details>

@@ -29,7 +29,7 @@ This modification does not require you to compile or upload any custom firmware 
 
 ## Tools and Part Requirements
 Here is a list of tools that will be needed to add an accelerometer board at the moment.
-1. Clik-MATE 6 Pin Cable Assembly. Digikey [source][2]
+1. Clik-MATE 6 Pin Cable Assembly (MPN: 0151350606 for 600mm). Digikey [source][2]
 2. LIS2DH Accelerometer board ready for SPI communication.
     * See the table below for a table of boards that have been tested and verified as working.
 3. Soldering Iron and related tools.
@@ -72,7 +72,7 @@ Here is a reference table for the Prusa Connector Pins and the breakout board. P
 |-------------------------------------------|----------------|-------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | NOYITO LIS2DH12TR Development Board       | WORKING        | https://a.co/d/4UiPgB6                          | This board is very generic and can be found many places ranging from $4 to $13. They likely all come from the same place.                                                                                                                                                                                   |
 | Sparkfun SPX-15760 LIS2DH12 (Qwiic)       | FAIL           | https://www.sparkfun.com/products/retired/15760 | This board is hard wired for I2C, while the Prusa MK4 expects an SPI compatible device, so this will not work.                                                                                                                                                                                              |
-| Adafruit LIS3DH Triple-Axis Accelerometer | TEST PENDING   | https://www.adafruit.com/product/2809           | The MK4 Firmware seems to suggest it was only tested with a LIS2DH board in mind. However, if you look at the datasheets, they are nearly identical. The difference is that the LIS3DH has a few more features we will be using. Nonetheless, this may provide a stable option for most people if it works. |
+| Adafruit LIS3DH Triple-Axis Accelerometer | TEST PENDING   | https://www.adafruit.com/product/2809           | The MK4 Firmware seems to suggest it was only tested with a LIS2DH board in mind. However, if you look at the datasheets, they are nearly identical. The difference is that the LIS3DH has a few more features we won't be using. Nonetheless, this may provide another stable option for most people if it works. |
 
 ## Using the Accelerometer
 If you are hoping to get useful values out of the accelerometer, emphasize doing any pending maintenance first. Lube the smooth rods/bearings. Check for scratches. Check belt tension, etc. Each of these factors will change these results if you fix them later, so just do them now to avoid retesting. See Prusa's official docs for recommended regular maintenance [here][8].
@@ -118,7 +118,7 @@ The `M959` command does all the heavy lifting in our testing. It's parameters ar
 ```
 
 [1]: https://help.prusa3d.com/article/warranty_2288
-[2]: https://www.digikey.com/en/products/detail/molex/2219581064/18694629
+[2]: https://www.digikey.com/en/products/detail/molex/0151350606/6830172
 [3]: https://help.prusa3d.com/article/accessory-connectors-mk4_622345
 [4]: https://www.reddit.com/r/prusa3d/comments/1b5wych/comment/ktben9d/?utm_source=share&utm_medium=web2x&context=3
 [5]: https://help.prusa3d.com/article/accessory-connectors-mk4_622345
