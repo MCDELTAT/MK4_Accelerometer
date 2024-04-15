@@ -34,7 +34,7 @@ Here is a list of tools that will be needed to add an accelerometer board at the
     * See the table below for a table of boards that have been tested and verified as working.
 3. Soldering Iron and related tools.
 4. (Optional) A multimeter will be helpful.
-5. Mounts for the board. 3D printable mounts for the generic board and my board will be linked here later.
+5. Mounts for the board. 3D Printable mounts for the X and Y-Axis can be found [here][9]. The mounts are designed for MK4 printers, but the mounting tray is designed to be modular. At the moment the only tray is for the generic accelerometer boards. I will provide another tray for my custom board later.
 6. Some kind of computer capable of controlling your MK4 Printer and a USB-C Cable. I tested everything with a Raspberry Pi running Octoprint, but any compatible software should be functional. For example, Mainsail or Pronterface should be more than capable.
 
 ## Soldering Your Accelerometer Board
