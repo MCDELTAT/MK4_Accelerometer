@@ -45,11 +45,11 @@ For this section, I will document the soldering procedure for the generic purple
 3. Cut the cable assembly with a wire stripper or other tool. Goodbye beautiful connector.
 4. Strip off approximately 5mm of the outer wire insulator for each cable.
 5. Heat up your soldering iron, twist the cables together tightly, and apply solder to the wires. This makes it into one solid connector and makes it easier to solder to the accelerometer board later.
-6. Identify the first wire to solder. If you did step one, the top side that you marked is pin 6 on the Prusa Schematics and Connector documentation. (See the Diagram below). On the Digikey cable assembly, they use tape in the middle of the cables to group them to together. We have two options:
+6. Identify the first wire to solder. If you did step two, the top side that you marked is pin 6 on the Prusa Schematics and Connector documentation. (See the Diagram below). On the Digikey cable assembly, they use tape in the middle of the cables to group them to together. We have two options:
 
     a) Cut the tape and visually trace the cables.
 
-    b) Leave the tape intract and use a multimeter to buzz out which cable is connected to each connector pin. This can be done by switching to continuity mode, touching one lead to a cable of your choice, and the other to small pad on the back of the connector.
+    b) Leave the tape intact and use a multimeter to buzz out which cable is connected to each connector pin. This can be done by switching to continuity mode, touching one lead to a cable of your choice, and the other to small pad on the back of the connector.
 7. Solder the wire to the correct position. Repeat steps 5 and 6, finding the correct wires and soldering them to the board. A table is provided below for reference.
 8. Snip the extra wire that wasn't covered by the solder joint.
 
@@ -79,7 +79,7 @@ If you are hoping to get useful values out of the accelerometer, emphasize doing
 
 1. Once you are confident your connections are going to the correct pins, plug the accelerometer into the MK4 Buddy board and the mounts.
 2. Connect to the printer over USB-C to issue GCODE.
-3. ⚠️ **IMPORTANT STEP** Before setting any paramenters, gather the values that Prusa originally set on the printer. This will allow you to roll back to those values later if you want. In a GCODE control window, issue the `M593` command with no arguments. This will return the existing Input Shaping (IS) parameters. An example of my output can be found below. If you want to see all my Input Shaping testing results, see [Testing][6].
+3. ⚠️ **IMPORTANT STEP** Before setting any parameters, gather the values that Prusa originally set on the printer. This will allow you to roll back to those values later if you want. In a GCODE control window, issue the `M593` command with no arguments. This will return the existing Input Shaping (IS) parameters. An example of my output can be found below. If you want to see all my Input Shaping testing results, see [Testing][6].
 ```
 Send: M593
 Recv: echo:axis X type=MZV freq=50.700001 damp=0.100000 vr=20.000000
@@ -95,7 +95,7 @@ Recv: ok
 
     a) To do this temporarily (until you shut off the printer), run the following command `M593 X D0.17444 F79.00 T0`. Note the lack of the `W` parameter, the parameter to save it to the EEPROM.
 
-    b) To save it permamently, run the following command `M593 X D0.17444 F79.00 T0 W`.
+    b) To save it permanently, run the following command `M593 X D0.17444 F79.00 T0 W`.
 
 ## M959 Command
 The `M959` command does all the heavy lifting in our testing. It's parameters are only listed in the source code, so I've copied them here for convenience.
@@ -125,3 +125,4 @@ The `M959` command does all the heavy lifting in our testing. It's parameters ar
 [6]: ./Testing.md
 [7]: https://help.prusa3d.com/article/buddy-firmware-specific-g-code-commands_633112#m-codes
 [8]: https://help.prusa3d.com/article/regular-printer-maintenance-mk4_419000
+[9]: https://www.printables.com/model/839201-mk4-accelerometer-mounts-for-x-and-y-axis-input-sh
