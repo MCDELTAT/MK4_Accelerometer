@@ -12,11 +12,15 @@ This primary document is focused on being a quick start guide, while other docum
 ## Future Work
 Here's a roadmap of a few simple tasks that I'd like to accomplish with this project.
 
-- [ ] Design our own custom PCB with a compatible Molex Clik-MATE connector (IN PROGRESS)
+
+- [x] Design mounts for the Toolhead and Bed that work with both custom and off the shelf boards.
+- [x] Test other chips like the LIS3DH for compatibility.
+- [ ] Run print tests and document outcomes (IN PROGRESS)
+- [ ] Design our own custom PCB with a compatible Molex Clik-MATE connector (IN PROGRESS-Design Complete, Validation Underway)
     * This will allow users to install an accelerometer quickly and without all the tools needed to solder.
-- [ ] Design mounts for the Toolhead and Bed that work with both custom and off the shelf boards (IN PROGRESS).
-- [ ] Test other chips like the LIS3DH for compatibility (IN PROGRESS).
-- [ ] Run print tests and document outcomes.
+
+## Compatability
+* At the moment, only MCDELTAT has confirmed the accelerometer as working on firmware versions 5.2.1 and 6.0.0. Their printer uses the 2021 0.2.7 xBuddy board. Two other community members have tried on printers that use the 0.3.7 board and are not seeing similar signals on their ports. I'm working with them and hoping Prusa will release the older schematics so I can compare.
 
 ## ⚠️ HALT - Warranty Check
 Q: Does this void my warranty?
@@ -44,7 +48,7 @@ For this section, I will document the soldering procedure for the generic purple
 2. (Optional but recommended). Insert one end of your cable assembly into the Accelerometer port of the board. The connector is keyed and will only fit one direction, with the release arm facing towards the center of the board (back of the printer). Pull it back out and use a marker to color the top side of the connector. This will help you to keep track of which pin belongs to each cable.
 3. Cut the cable assembly with a wire stripper or other tool. Goodbye beautiful connector.
 4. Strip off approximately 5mm of the outer wire insulator for each cable.
-5. Heat up your soldering iron, twist the cables together tightly, and apply solder to the wires. This makes it into one solid connector and makes it easier to solder to the accelerometer board later.
+5. (Optional tinning technique). Heat up your soldering iron, twist the stranded wires of a single cable together tightly, and apply solder to the wires. This makes it into one solid connector and makes it easier to solder to the accelerometer board later.
 6. Identify the first wire to solder. If you did step two, the top side that you marked is pin 6 on the Prusa Schematics and Connector documentation. (See the Diagram below). On the Digikey cable assembly, they use tape in the middle of the cables to group them to together. We have two options:
 
     a) Cut the tape and visually trace the cables.
@@ -65,6 +69,15 @@ Here is a reference table for the Prusa Connector Pins and the breakout board. P
 | J29 (ACCELEROMETER) | 5           | VCC               | 3V3               | Power    | x    | Max 50mA     |
 | J29 (ACCELEROMETER) | 6           | GND               | GND               | Power    | x    | x            |
 
+## Pinout Images
+### Connector Side:
+![alt text](./images/6PinClickmate_Colored.png "ClickMate Male Connector Colored Pinout")
+
+### Adafruit Board:
+![alt text](./images/Adafruit_LIS3DH_Colored.png "Adafruit LIS3DH Board Colored Pinout")
+
+### Generic LIS2DH Board:
+![alt text](./images/PurpleLIS2DH_Colored.png "Generic LIS2DH Board Colored Pinout")
 
 ## Compatible Boards:
 
